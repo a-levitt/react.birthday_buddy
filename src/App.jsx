@@ -1,9 +1,16 @@
 import {useState} from 'react';
 import data from "./data.js";
+import List from "./List.jsx";
 
 const App = () => {
   const [people, setPeople] = useState(data);
-  console.log(people);
-  return <h2>Birthday Reminder - Starter</h2>;
+  return (
+      <main>
+        <section className="container">
+          <h3>{people.length} birthdays today 🎉</h3>
+          <List people={people} />
+        </section>
+      </main>
+  )
 };
 export default App;
